@@ -1,0 +1,38 @@
+{
+  "app": {
+    "name": "Ashan Market",
+    "tagline": "Nepali groceries, delivered across the USA",
+    "comingSoon": "We're stocking the shelves. Opening soon."
+  },
+  "nav": {
+    "home": "Home",
+    "categories": "Categories",
+    "search": "Search",
+    "cart": "Cart",
+    "account": "Account"
+  },
+  "language": {
+    "label": "Language",
+    "en": "English",
+    "ne": "नेपाली"
+  },
+  "search": {
+    "placeholder": "Search Wai Wai, achar, chiura…"
+  },
+  "cart": {
+    "freeShippingProgress": "You're {{amount}} away from free shipping",
+    "freeShippingUnlocked": "You've unlocked free shipping"
+  },
+  "categories": {
+    "snacks-namkeen": "Snacks & Namkeen",
+    "noodles": "Noodles",
+    "achar-pickles": "Achar & Pickles",
+    "spices-masala": "Spices & Masala",
+    "rice-daal-chiura": "Rice, Daal & Chiura",
+    "tea": "Tea",
+    "sweets": "Sweets",
+    "frozen": "Frozen",
+    "puja-samagri": "Puja Samagri",
+    "household": "Household"
+  }
+}

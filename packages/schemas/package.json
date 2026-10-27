@@ -1,0 +1,24 @@
+{
+  "name": "@ashan/schemas",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "typecheck": "tsc",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@ashan/config": "workspace:*",
+    "@types/node": "^24",
+    "eslint": "^9",
+    "typescript": "~6.0.3",
+    "vitest": "^5.0.5"
+  }
+}

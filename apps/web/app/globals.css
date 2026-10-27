@@ -1,0 +1,19 @@
+@import 'tailwindcss';
+@import '@ashan/tokens/tokens.css';
+
+@layer base {
+  body {
+    background: var(--color-background);
+    color: var(--color-text);
+  }
+
+  :lang(ne) {
+    font-family: var(--font-devanagari);
+    line-height: 1.7;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-focus);
+    outline-offset: 2px;
+  }
+}

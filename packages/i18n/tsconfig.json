@@ -1,0 +1,4 @@
+{
+  "extends": "@ashan/config/tsconfig/library.json",
+  "include": ["src", "locales"]
+}

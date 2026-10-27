@@ -1,0 +1,7 @@
+pnpm-lock.yaml
+.next
+.expo
+.turbo
+dist
+packages/tokens/generated
+supabase/.temp

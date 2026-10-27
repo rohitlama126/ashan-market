@@ -1,0 +1,38 @@
+{
+  "app": {
+    "name": "असन मार्केट",
+    "tagline": "नेपाली किराना सामान, अमेरिकाभर डेलिभरी",
+    "comingSoon": "हामी सामान थप्दैछौं। छिट्टै खुल्दैछ।"
+  },
+  "nav": {
+    "home": "गृहपृष्ठ",
+    "categories": "वर्गहरू",
+    "search": "खोज्नुहोस्",
+    "cart": "कार्ट",
+    "account": "खाता"
+  },
+  "language": {
+    "label": "भाषा",
+    "en": "English",
+    "ne": "नेपाली"
+  },
+  "search": {
+    "placeholder": "वाइवाई, अचार, चिउरा खोज्नुहोस्…"
+  },
+  "cart": {
+    "freeShippingProgress": "निःशुल्क ढुवानीका लागि {{amount}} बाँकी",
+    "freeShippingUnlocked": "तपाईंले निःशुल्क ढुवानी पाउनुभयो"
+  },
+  "categories": {
+    "snacks-namkeen": "खाजा र नमकीन",
+    "noodles": "चाउचाउ",
+    "achar-pickles": "अचार",
+    "spices-masala": "मसला",
+    "rice-daal-chiura": "चामल, दाल र चिउरा",
+    "tea": "चिया",
+    "sweets": "मिठाई",
+    "frozen": "फ्रोजन",
+    "puja-samagri": "पूजा सामग्री",
+    "household": "घरायसी"
+  }
+}

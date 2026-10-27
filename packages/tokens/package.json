@@ -1,0 +1,23 @@
+{
+  "name": "@ashan/tokens",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./tokens.css": "./generated/tokens.css"
+  },
+  "scripts": {
+    "generate": "node src/generate.ts",
+    "lint": "eslint .",
+    "typecheck": "tsc",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@ashan/config": "workspace:*",
+    "@types/node": "^24",
+    "eslint": "^9",
+    "typescript": "~6.0.3",
+    "vitest": "^5.0.5"
+  }
+}
