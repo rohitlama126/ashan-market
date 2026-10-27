@@ -1,5 +1,13 @@
 import { describe, expect, it } from 'vitest';
-import { AddressSchema, CentsSchema, UsPhoneSchema, UsZipSchema } from './index.ts';
+import {
+  AddressSchema,
+  CentsSchema,
+  EmailSchema,
+  OtpCodeSchema,
+  ProfileUpdateSchema,
+  UsPhoneSchema,
+  UsZipSchema,
+} from './index.ts';
 
 describe('UsZipSchema', () => {
   it.each(['11372', '75038-1234', ' 94103 '])('accepts %s', (zip) => {
@@ -44,6 +52,46 @@ describe('AddressSchema', () => {
     expect(
       AddressSchema.safeParse({ name: 'A', line1: 'B', city: 'C', state: 'XX', zip: '11372' })
         .success,
+    ).toBe(false);
+  });
+});
+
+describe('EmailSchema', () => {
+  it('normalizes case and whitespace', () => {
+    expect(EmailSchema.parse('  Sita@Example.COM ')).toBe('sita@example.com');
+  });
+  it('rejects malformed addresses', () => {
+    expect(EmailSchema.safeParse('sita@').success).toBe(false);
+  });
+});
+
+describe('OtpCodeSchema', () => {
+  it('accepts exactly six digits', () => {
+    expect(OtpCodeSchema.parse(' 123456 ')).toBe('123456');
+    expect(OtpCodeSchema.safeParse('12345').success).toBe(false);
+    expect(OtpCodeSchema.safeParse('12345a').success).toBe(false);
+  });
+});
+
+describe('ProfileUpdateSchema', () => {
+  it('turns empty optional fields into null', () => {
+    expect(
+      ProfileUpdateSchema.parse({
+        full_name: '  ',
+        home_zip: '',
+        locale: 'ne',
+        marketing_opt_in: false,
+      }),
+    ).toEqual({ full_name: null, home_zip: null, locale: 'ne', marketing_opt_in: false });
+  });
+  it('rejects a ZIP+4 (profiles store 5 digits)', () => {
+    expect(
+      ProfileUpdateSchema.safeParse({
+        full_name: 'A',
+        home_zip: '11372-1234',
+        locale: 'en',
+        marketing_opt_in: true,
+      }).success,
     ).toBe(false);
   });
 });

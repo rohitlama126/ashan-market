@@ -1,0 +1,12 @@
+<!-- Sign-in code email (English + Nepali). Plain, accessible HTML: most mail clients strip CSS. -->
+<div style="font-family: Inter, Mukta, Arial, sans-serif; color: #161c25; max-width: 480px">
+  <h1 style="color: #b3261e; font-size: 22px">Ashan Market</h1>
+  <p>Your sign-in code is:</p>
+  <p style="font-size: 32px; font-weight: 700; letter-spacing: 6px">{{ .Token }}</p>
+  <p>It expires in 1 hour. If you didn't ask for this code, you can ignore this email.</p>
+  <hr style="border: none; border-top: 1px solid #e6dccf" />
+  <p lang="ne">तपाईंको साइन इन कोड: <strong>{{ .Token }}</strong></p>
+  <p lang="ne">
+    यो कोड १ घण्टामा समाप्त हुन्छ। तपाईंले यो कोड मागेको होइन भने यो इमेल बेवास्ता गर्नुहोस्।
+  </p>
+</div>

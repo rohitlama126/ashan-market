@@ -2,6 +2,7 @@ import { DarkTheme, DefaultTheme, ThemeProvider } from 'expo-router';
 import { NativeTabs } from 'expo-router/native-tabs';
 import { StatusBar } from 'expo-status-bar';
 import { useTranslation } from 'react-i18next';
+import { AuthProvider } from '@/auth';
 import { I18nProvider } from '@/i18n';
 import { useTheme } from '@/theme';
 
@@ -55,10 +56,12 @@ export default function RootLayout() {
         },
       }}
     >
-      <I18nProvider>
-        <StatusBar style="auto" />
-        <Tabs />
-      </I18nProvider>
+      <AuthProvider>
+        <I18nProvider>
+          <StatusBar style="auto" />
+          <Tabs />
+        </I18nProvider>
+      </AuthProvider>
     </ThemeProvider>
   );
 }

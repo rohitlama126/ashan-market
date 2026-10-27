@@ -244,7 +244,10 @@ Proposed original palette (to be finalized in brand milestone, AA-checked):
 
 ## 8. Cross-cutting
 
-- **Auth:** Supabase Auth with email OTP/magic link, phone OTP (Twilio), Sign in with Apple (native on iOS, OAuth on web), Google. Browsing and cart work without an account.
+- **Auth (built in M2):** Supabase Auth with 6-digit email and SMS codes (one flow on web and iOS), Sign in with Apple (native ID token + nonce on iOS, OAuth on web) and Google (PKCE; system browser sheet on iOS). Browsing and cart work without an account. Web sessions live in HTTP-only cookies, refreshed by `proxy.ts`; iOS sessions live in the Keychain via a chunked `expo-secure-store` adapter.
+  - **Profiles:** created by an `auth.users` trigger. RLS limits customers to their own row, and column grants stop them changing `role`.
+  - **Account deletion:** in-app on both platforms via the `delete_my_account()` RPC (App Store 5.1.1(v)).
+  - **Open before App Store submission (M9):** Apple requires revoking Sign in with Apple tokens when an account is deleted. Plan: on delete, the iOS app re-requests an Apple authorization code, and a server route exchanges it at Apple's `/auth/token` and calls `/auth/revoke` (needs the Apple key, so it is built once the developer account exists).
 - **i18n:** locale in URL on web (`/en`, `/ne`) for SEO; device locale + setting on mobile. Money/dates via `Intl` (`en-US`, `ne-NP` numerals optional).
 - **Accessibility:** WCAG 2.2 AA target, with axe checks in Playwright, RN accessibility labels, dynamic type and 44pt targets.
 - **Security:** secrets only in server env; Stripe webhook signature verification; RLS everywhere; rate limit on auth/checkout routes.

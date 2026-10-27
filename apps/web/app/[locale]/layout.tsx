@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Inter, Mukta } from 'next/font/google';
 import { notFound } from 'next/navigation';
 import { createI18n, isLocale, locales } from '@ashan/i18n';
+import { SiteHeader } from '../../components/site-header.tsx';
 import '../globals.css';
 
 const inter = Inter({ variable: '--font-inter', subsets: ['latin'] });
@@ -32,7 +33,13 @@ export default async function LocaleLayout({ children, params }: LayoutProps<'/[
 
   return (
     <html lang={locale} className={`${inter.variable} ${mukta.variable} h-full antialiased`}>
-      <body className="flex min-h-full flex-col font-sans">{children}</body>
+      <body className="flex min-h-full flex-col font-sans">
+        <SiteHeader locale={locale} />
+        {children}
+        <footer className="bg-surface-muted text-text-muted mt-auto py-6 text-center text-sm">
+          © 2026 {createI18n(locale).t('app.name')}
+        </footer>
+      </body>
     </html>
   );
 }

@@ -47,6 +47,16 @@ pnpm db:start        # starts local Supabase in Docker; copy the printed anon ke
 | `pnpm tokens`                            | Regenerate `packages/tokens/generated/tokens.css` after editing tokens |
 | `pnpm db:start` / `db:stop` / `db:reset` | Local Supabase lifecycle                                               |
 
+## Testing sign-in locally
+
+With `pnpm db:start` running and the printed anon key in both `.env.local` files:
+
+- **Email code:** sign in with any address. The 6-digit code arrives in the local inbox at http://127.0.0.1:54324 (Mailpit); no real email is sent.
+- **Phone code:** use `(718) 555-0134` with code `123456`. It's a fictional test number set in `supabase/config.toml`; other numbers need Twilio.
+- **Apple / Google:** off until you add credentials (set `enabled = true` and the secret in `supabase/.env`). Native Sign in with Apple on iOS needs an Apple Developer account and a development build, not Expo Go.
+- **Database tests:** `pnpm db:test` runs the pgTAP suite in `supabase/tests` (RLS, column grants, account deletion).
+- After changing a migration: `pnpm db:reset && pnpm db:types`.
+
 ## Privacy of this repository
 
 The repo has no git remote. Telemetry is off for Turborepo, Next.js and the Supabase CLI on this machine, and `.env.example` sets `NEXT_TELEMETRY_DISABLED` and `EXPO_NO_TELEMETRY`. Secrets go only in `.env.local` files, which git ignores.

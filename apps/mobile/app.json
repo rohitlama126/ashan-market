@@ -10,18 +10,26 @@
     "ios": {
       "bundleIdentifier": "com.ashanmarket.app",
       "supportsTablet": false,
-      "config": { "usesNonExemptEncryption": false }
+      "config": {
+        "usesNonExemptEncryption": false
+      },
+      "usesAppleSignIn": true
     },
     "plugins": [
       "expo-router",
       "expo-localization",
+      "expo-apple-authentication",
+      "expo-secure-store",
+      "expo-web-browser",
       [
         "expo-splash-screen",
         {
           "backgroundColor": "#FBF7F2",
           "image": "./assets/images/splash-icon.png",
           "imageWidth": 96,
-          "dark": { "backgroundColor": "#14110F" }
+          "dark": {
+            "backgroundColor": "#14110F"
+          }
         }
       ]
     ],

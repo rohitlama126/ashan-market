@@ -89,3 +89,27 @@ export type ShippingClass = z.infer<typeof ShippingClassSchema>;
 
 export const FulfillmentMethodSchema = z.enum(['ship', 'local_delivery', 'pickup']);
 export type FulfillmentMethod = z.infer<typeof FulfillmentMethodSchema>;
+
+export const EmailSchema = z.string().trim().toLowerCase().pipe(z.email());
+
+export const OtpCodeSchema = z
+  .string()
+  .trim()
+  .regex(/^\d{6}$/, 'Enter the 6-digit code');
+
+/** Fields a customer may edit on their own profile (mirrors the column grants in the DB). */
+export const ProfileUpdateSchema = z.object({
+  full_name: z
+    .string()
+    .trim()
+    .max(100)
+    .transform((s) => s || null),
+  home_zip: z
+    .string()
+    .trim()
+    .regex(/^(\d{5})?$/, 'Enter a 5-digit ZIP code')
+    .transform((s) => s || null),
+  locale: LocaleSchema,
+  marketing_opt_in: z.boolean(),
+});
+export type ProfileUpdate = z.infer<typeof ProfileUpdateSchema>;
