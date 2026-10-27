@@ -1,4 +1,4 @@
-import { isLocale, locales, type Locale } from '@ashan/i18n';
+import { formatIdentifier, isLocale, locales, type Locale } from '@ashan/i18n';
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Alert, Pressable, View } from 'react-native';
@@ -98,7 +98,7 @@ export default function AccountScreen() {
       {user ? (
         <View style={{ gap: spacing[4] }}>
           <AppText variant="muted">
-            {t('account.signedInAs', { identifier: user.email ?? user.phone ?? '' })}
+            {t('account.signedInAs', { identifier: formatIdentifier(user) })}
           </AppText>
           <Button
             label={t('auth.signOut')}

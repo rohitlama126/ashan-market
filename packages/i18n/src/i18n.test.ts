@@ -1,5 +1,12 @@
 import { describe, expect, it } from 'vitest';
-import { createI18n, formatMoney, formatWeight, isLocale, resources } from './index.ts';
+import {
+  createI18n,
+  formatIdentifier,
+  formatMoney,
+  formatWeight,
+  isLocale,
+  resources,
+} from './index.ts';
 
 function keyPaths(obj: object, prefix = ''): string[] {
   return Object.entries(obj).flatMap(([k, v]) =>
@@ -57,5 +64,20 @@ describe('formatWeight', () => {
     expect(formatWeight(400)).toBe('400 g (14.1 oz)');
     expect(formatWeight(500)).toBe('500 g (1.1 lb)');
     expect(formatWeight(1000)).toBe('1 kg (2.2 lb)');
+  });
+});
+
+describe('formatIdentifier', () => {
+  it('prefers a non-empty email', () => {
+    expect(formatIdentifier({ email: 'sita@example.com', phone: '17185550134' })).toBe(
+      'sita@example.com',
+    );
+  });
+  it('falls back to a formatted US phone when email is empty', () => {
+    expect(formatIdentifier({ email: '', phone: '17185550134' })).toBe('+1 (718) 555-0134');
+    expect(formatIdentifier({ phone: '+17185550134' })).toBe('+1 (718) 555-0134');
+  });
+  it('returns an empty string when neither is set', () => {
+    expect(formatIdentifier({ email: '', phone: '' })).toBe('');
   });
 });

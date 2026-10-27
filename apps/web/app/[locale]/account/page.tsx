@@ -1,6 +1,7 @@
-import { createI18n, isLocale, type Locale } from '@ashan/i18n';
+import { createI18n, formatIdentifier, isLocale, type Locale } from '@ashan/i18n';
 import type { Metadata } from 'next';
 import { notFound, redirect } from 'next/navigation';
+import { connection } from 'next/server';
 import { Suspense } from 'react';
 import { DeleteAccount } from '../../../components/account/delete-account.tsx';
 import { ProfileForm } from '../../../components/account/profile-form.tsx';
@@ -33,6 +34,8 @@ export default async function AccountPage({ params }: PageProps<'/[locale]/accou
 
 // Reads cookies, so it renders per request inside the Suspense boundary.
 async function AccountDetails({ locale }: { locale: Locale }) {
+  // Session data is per request (and the auth client reads the clock); never prerender this part.
+  await connection();
   const { t } = createI18n(locale);
   if (!supabaseEnv()) {
     return (
@@ -51,7 +54,7 @@ async function AccountDetails({ locale }: { locale: Locale }) {
     .eq('id', data.user.id)
     .single();
   if (!profile) redirect(`/${locale}/sign-in`);
-  const identifier = data.user.email ?? data.user.phone ?? '';
+  const identifier = formatIdentifier(data.user);
 
   return (
     <>

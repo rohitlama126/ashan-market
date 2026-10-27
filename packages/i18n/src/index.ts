@@ -44,3 +44,11 @@ export function formatWeight(grams: number): string {
   const imperial = oz >= 16 ? `${+(oz / 16).toFixed(2)} lb` : `${+oz.toFixed(1)} oz`;
   return `${metric} (${imperial})`;
 }
+
+/** What to show for "Signed in as …". Supabase uses '' (not null) for a missing email or phone. */
+export function formatIdentifier(user: { email?: string | null; phone?: string | null }): string {
+  if (user.email) return user.email;
+  const digits = (user.phone ?? '').replace(/\D/g, '');
+  const m = /^1?(\d{3})(\d{3})(\d{4})$/.exec(digits);
+  return m ? `+1 (${m[1]}) ${m[2]}-${m[3]}` : digits;
+}
