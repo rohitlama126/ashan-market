@@ -1,4 +1,4 @@
-// Builds every app/browser icon from the stupa brand artwork (apps/web/public/brand/stupa.png).
+// Builds every app/browser icon from the Ashan Market logo (apps/web/public/brand/logo.png).
 // Run after replacing that file: node apps/mobile/scripts/make-icons.mjs
 // sharp is a devDependency of this app.
 import { createRequire } from 'node:module';
@@ -9,7 +9,7 @@ const require = createRequire(import.meta.url);
 const sharp = require('sharp');
 
 const path = (rel) => fileURLToPath(new URL(rel, import.meta.url));
-const source = path('../../web/public/brand/stupa.png');
+const source = path('../../web/public/brand/logo.png');
 const WHITE = { r: 255, g: 255, b: 255, alpha: 1 };
 
 /** Square PNG on white with breathing room; iOS icons must be opaque. */

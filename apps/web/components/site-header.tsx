@@ -1,7 +1,7 @@
 import { createI18n, locales, type Locale } from '@ashan/i18n';
 import Image from 'next/image';
 import Link from 'next/link';
-import stupa from '../public/brand/stupa.png';
+import logo from '../public/brand/logo.png';
 import { CartLink } from './cart-link.tsx';
 
 export function SiteHeader({ locale }: { locale: Locale }) {
@@ -13,11 +13,11 @@ export function SiteHeader({ locale }: { locale: Locale }) {
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-2 px-4 py-3 sm:gap-4">
         <Link href={`/${locale}`} className="flex min-h-11 items-center gap-3 rounded-md">
           <Image
-            src={stupa}
+            src={logo}
             alt=""
             priority
-            sizes="48px"
-            className="size-12 rounded-lg bg-white object-contain p-0.5 shadow-sm ring-1 ring-black/5"
+            sizes="56px"
+            className="size-14 rounded-full bg-white object-contain shadow-sm ring-1 ring-black/10"
           />
           {/* Wordmark is set in capitals with CSS so screen readers still read the words; letter spacing
               would break Devanagari, so it applies to English only.
