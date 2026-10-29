@@ -88,7 +88,9 @@
   "home": {
     "kicker": "Nepali groceries & essentials",
     "browse": "Browse categories",
-    "festivalNote": "Dashain & Tihar specials coming soon"
+    "festivalNote": "Dashain & Tihar specials coming soon",
+    "shopNow": "Shop now",
+    "heroAlt": "Swayambhunath stupa at sunrise, with prayer flags and the Buddha's eyes"
   },
   "product": {
     "addToCart": "Add to cart",
