@@ -9,11 +9,20 @@ const categorySlugs = Object.keys(
 ) as (keyof typeof resources.en.categories)[];
 
 export default function HomeScreen() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const { colors, radii, spacing } = useTheme();
   return (
     <Screen>
-      <AppText variant="muted">{t('app.name')}</AppText>
+      <AppText
+        variant="muted"
+        // Letter spacing breaks Devanagari, so capitals + tracking apply to English only.
+        style={[
+          { fontWeight: '800' },
+          i18n.language === 'en' && { textTransform: 'uppercase', letterSpacing: 2 },
+        ]}
+      >
+        {t('app.name')}
+      </AppText>
       <View
         style={[
           styles.hero,

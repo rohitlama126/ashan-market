@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Inter, Mukta } from 'next/font/google';
 import { notFound } from 'next/navigation';
 import { createI18n, isLocale, locales } from '@ashan/i18n';
+import { Backdrop } from '../../components/backdrop.tsx';
 import { SiteHeader } from '../../components/site-header.tsx';
 import '../globals.css';
 
@@ -33,11 +34,15 @@ export default async function LocaleLayout({ children, params }: LayoutProps<'/[
 
   return (
     <html lang={locale} className={`${inter.variable} ${mukta.variable} h-full antialiased`}>
-      <body className="flex min-h-full flex-col font-sans">
+      <body className="isolate flex min-h-full flex-col font-sans">
+        <Backdrop />
         <SiteHeader locale={locale} />
         {children}
-        <footer className="bg-surface-muted text-text-muted mt-auto py-6 text-center text-sm">
-          © 2026 {createI18n(locale).t('app.name')}
+        <footer className="glass text-text-muted mt-auto rounded-none border-x-0 border-b-0 py-6 text-center text-sm">
+          © 2026{' '}
+          <span className={`font-semibold ${locale === 'en' ? 'tracking-[0.14em] uppercase' : ''}`}>
+            {createI18n(locale).t('app.name')}
+          </span>
         </footer>
       </body>
     </html>

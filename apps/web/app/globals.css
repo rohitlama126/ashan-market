@@ -17,3 +17,54 @@
     outline-offset: 2px;
   }
 }
+
+/* Frosted glass: a translucent surface that blurs the warm backdrop behind it. The surface stays
+   mostly opaque so text keeps its AA contrast against the token colors. */
+@utility glass {
+  background-color: color-mix(in oklab, var(--color-surface) 72%, transparent);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid color-mix(in oklab, var(--color-text) 10%, transparent);
+  box-shadow:
+    inset 0 1px 0 color-mix(in oklab, white 22%, transparent),
+    0 12px 32px -16px rgb(0 0 0 / 0.35);
+}
+
+/* Lighter variant for small pills and chips. */
+@utility glass-subtle {
+  background-color: color-mix(in oklab, var(--color-surface) 50%, transparent);
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
+  backdrop-filter: blur(12px) saturate(150%);
+  border: 1px solid color-mix(in oklab, var(--color-text) 12%, transparent);
+}
+
+/* Respect "Reduce transparency" (macOS/iOS accessibility setting): fall back to solid surfaces. */
+@media (prefers-reduced-transparency: reduce) {
+  .glass,
+  .glass-subtle {
+    background-color: var(--color-surface);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}
+
+/* Slow drift for the backdrop color fields; disabled for people who prefer reduced motion. */
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(3%, -4%, 0) scale(1.08);
+  }
+}
+
+@utility animate-drift {
+  animation: drift 22s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-drift {
+    animation: none;
+  }
+}

@@ -73,5 +73,10 @@
     "deleteConfirm": "Delete my account",
     "cancel": "Cancel",
     "unavailable": "Accounts aren't available right now. Please try again later."
+  },
+  "home": {
+    "kicker": "Nepali groceries & essentials",
+    "browse": "Browse categories",
+    "festivalNote": "Dashain & Tihar specials coming soon"
   }
 }
