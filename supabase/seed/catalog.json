@@ -1,0 +1,479 @@
+{
+  "_note": "Local sample catalog. Prices are illustrative. Ingredients/allergens are sample text, NOT verified against real labels (english_label_verified=false); staff must review before launch. Run `pnpm db:seed:build` after editing.",
+  "categories": [
+    { "slug": "snacks-namkeen", "en": "Snacks & Namkeen", "ne": "खाजा र नमकीन" },
+    { "slug": "noodles", "en": "Noodles", "ne": "चाउचाउ" },
+    { "slug": "achar-pickles", "en": "Achar & Pickles", "ne": "अचार" },
+    { "slug": "spices-masala", "en": "Spices & Masala", "ne": "मसला" },
+    { "slug": "rice-daal-chiura", "en": "Rice, Daal & Chiura", "ne": "चामल, दाल र चिउरा" },
+    { "slug": "tea", "en": "Tea", "ne": "चिया" },
+    { "slug": "sweets", "en": "Sweets", "ne": "मिठाई" },
+    { "slug": "frozen", "en": "Frozen", "ne": "फ्रोजन" },
+    { "slug": "puja-samagri", "en": "Puja Samagri", "ne": "पूजा सामग्री" },
+    { "slug": "household", "en": "Household", "ne": "घरायसी" }
+  ],
+  "products": [
+    {
+      "slug": "wai-wai-chicken-noodles",
+      "brand": "Wai Wai",
+      "category": "noodles",
+      "en": "Wai Wai Instant Noodles, Chicken",
+      "ne": "वाइवाई चाउचाउ, चिकेन",
+      "desc_en": "Nepal's favorite pre-cooked noodles with chicken seasoning and spiced oil. Crunch them straight from the pack or cook in 2 minutes.",
+      "desc_ne": "चिकेन मसला र मसलेदार तेलसहितको नेपालको मनपर्ने चाउचाउ। प्याकेटबाटै काँचै खानुहोस् वा २ मिनेटमा पकाउनुहोस्।",
+      "origin": "Nepal",
+      "ingredients": "Wheat flour, palm oil, salt, chicken flavor seasoning, chili powder, onion, garlic, spices.",
+      "allergens": ["wheat"],
+      "may_contain": ["soy"],
+      "spice": 2,
+      "tags": ["bestseller", "dashain"],
+      "variants": [
+        {
+          "en": "Single pack, 75 g",
+          "ne": "एक प्याकेट, ७५ ग्राम",
+          "price": 99,
+          "grams": 75,
+          "stock": 400
+        },
+        {
+          "en": "Box of 30",
+          "ne": "३० प्याकेटको बक्स",
+          "price": 2499,
+          "compare": 2970,
+          "grams": 2250,
+          "stock": 60
+        }
+      ]
+    },
+    {
+      "slug": "wai-wai-veg-noodles",
+      "brand": "Wai Wai",
+      "category": "noodles",
+      "en": "Wai Wai Instant Noodles, Veg",
+      "ne": "वाइवाई चाउचाउ, भेज",
+      "desc_en": "The vegetarian classic: crispy pre-cooked noodles with a masala seasoning packet.",
+      "desc_ne": "शाकाहारी क्लासिक: मसला प्याकेटसहितको कुरकुरे चाउचाउ।",
+      "origin": "Nepal",
+      "ingredients": "Wheat flour, palm oil, salt, vegetable seasoning, chili, turmeric, spices.",
+      "allergens": ["wheat"],
+      "may_contain": ["soy"],
+      "dietary": ["vegetarian"],
+      "spice": 2,
+      "variants": [
+        {
+          "en": "Single pack, 75 g",
+          "ne": "एक प्याकेट, ७५ ग्राम",
+          "price": 99,
+          "grams": 75,
+          "stock": 350
+        },
+        { "en": "Box of 30", "ne": "३० प्याकेटको बक्स", "price": 2399, "grams": 2250, "stock": 40 }
+      ]
+    },
+    {
+      "slug": "rara-noodles",
+      "brand": "Rara",
+      "category": "noodles",
+      "en": "Rara Instant Noodles",
+      "ne": "रारा चाउचाउ",
+      "desc_en": "Mild, white noodles loved since the 1980s. A comforting bowl of soup noodles in minutes.",
+      "desc_ne": "सन् १९८० को दशकदेखि मन पराइएको हल्का सेतो चाउचाउ। केही मिनेटमै झोल चाउचाउ।",
+      "origin": "Nepal",
+      "ingredients": "Wheat flour, vegetable oil, salt, seasoning (onion, garlic, black pepper).",
+      "allergens": ["wheat"],
+      "dietary": ["vegetarian"],
+      "spice": 0,
+      "variants": [
+        { "en": "Pack of 5", "ne": "५ प्याकेट", "price": 449, "grams": 375, "stock": 120 }
+      ]
+    },
+    {
+      "slug": "mayos-chicken-noodles",
+      "brand": "Mayos",
+      "category": "noodles",
+      "en": "Mayos Instant Noodles, Chicken",
+      "ne": "मायोस चाउचाउ, चिकेन",
+      "desc_en": "Thin, quick-cooking noodles with a rich chicken masala. A hostel-days favorite.",
+      "desc_ne": "चिकेन मसलासहितको पातलो, छिटो पाक्ने चाउचाउ।",
+      "origin": "Nepal",
+      "ingredients": "Wheat flour, palm oil, salt, chicken flavor, spices, chili.",
+      "allergens": ["wheat"],
+      "may_contain": ["soy", "milk"],
+      "spice": 2,
+      "variants": [
+        { "en": "Pack of 5", "ne": "५ प्याकेट", "price": 499, "grams": 350, "stock": 90 }
+      ]
+    },
+    {
+      "slug": "kurkure-masala-munch",
+      "brand": "Kurkure",
+      "category": "snacks-namkeen",
+      "en": "Kurkure Masala Munch",
+      "ne": "कुरकुरे मसला मन्च",
+      "desc_en": "Crunchy, tangy corn puffs with a bold masala kick.",
+      "desc_ne": "चटपटे मसलासहितको कुरकुरे मकैको खाजा।",
+      "origin": "India",
+      "ingredients": "Rice meal, edible vegetable oil, corn meal, gram meal, spices and condiments, salt.",
+      "allergens": [],
+      "may_contain": ["milk", "wheat"],
+      "dietary": ["vegetarian"],
+      "spice": 2,
+      "variants": [{ "en": "90 g bag", "ne": "९० ग्राम", "price": 199, "grams": 90, "stock": 200 }]
+    },
+    {
+      "slug": "ashan-kitchen-bhuja",
+      "brand": "Ashan Kitchen",
+      "category": "snacks-namkeen",
+      "en": "Bhuja (Puffed Rice Mix)",
+      "ne": "भुजा",
+      "desc_en": "Light puffed rice tossed with peanuts and spices, just like the bhuja at a Kathmandu tea shop.",
+      "desc_ne": "काठमाडौंको चिया पसलको जस्तै बदाम र मसलासहितको हल्का भुजा।",
+      "origin": "Nepal",
+      "ingredients": "Puffed rice, peanuts, vegetable oil, salt, turmeric, chili, curry leaves.",
+      "allergens": ["peanuts"],
+      "dietary": ["vegetarian", "vegan"],
+      "spice": 1,
+      "variants": [{ "en": "200 g", "ne": "२०० ग्राम", "price": 399, "grams": 200, "stock": 80 }]
+    },
+    {
+      "slug": "ashan-kitchen-dalmot",
+      "brand": "Ashan Kitchen",
+      "category": "snacks-namkeen",
+      "en": "Dalmot (Spiced Lentil Mix)",
+      "ne": "दालमोठ",
+      "desc_en": "Fried lentils, peanuts and crispy noodles with a tangy masala. The snack for every Dashain card game.",
+      "desc_ne": "भुटेको दाल, बदाम र कुरकुरे सेवसहितको चटपटे दालमोठ। दशैंको तासको साथी।",
+      "origin": "Nepal",
+      "ingredients": "Lentils, chickpea flour, peanuts, vegetable oil, salt, chili, mango powder, spices.",
+      "allergens": ["peanuts"],
+      "may_contain": ["tree nuts"],
+      "dietary": ["vegetarian", "vegan"],
+      "spice": 2,
+      "tags": ["dashain"],
+      "variants": [
+        { "en": "400 g", "ne": "४०० ग्राम", "price": 599, "grams": 400, "stock": 70 },
+        { "en": "1 kg", "ne": "१ किलो", "price": 1299, "compare": 1499, "grams": 1000, "stock": 25 }
+      ]
+    },
+    {
+      "slug": "lays-india-magic-masala",
+      "brand": "Lay's",
+      "category": "snacks-namkeen",
+      "en": "Lay's India's Magic Masala",
+      "ne": "लेज म्याजिक मसला",
+      "desc_en": "Potato chips with the masala flavor everyone remembers from back home.",
+      "desc_ne": "घरको याद दिलाउने म्याजिक मसला स्वादको आलु चिप्स।",
+      "origin": "India",
+      "ingredients": "Potatoes, vegetable oil, spices and condiments, salt, sugar.",
+      "allergens": [],
+      "may_contain": ["milk"],
+      "dietary": ["vegetarian"],
+      "spice": 1,
+      "variants": [{ "en": "52 g bag", "ne": "५२ ग्राम", "price": 149, "grams": 52, "stock": 150 }]
+    },
+    {
+      "slug": "ashan-kitchen-mula-achar",
+      "brand": "Ashan Kitchen",
+      "category": "achar-pickles",
+      "en": "Mula ko Achar (Radish Pickle)",
+      "ne": "मुलाको अचार",
+      "desc_en": "Sun-cured radish in mustard oil with timur and fenugreek, the way aama makes it.",
+      "desc_ne": "तोरीको तेल, टिमुर र मेथीसहित घाममा सुकाएको मुलाको अचार, आमाले बनाएजस्तै।",
+      "origin": "Nepal",
+      "ingredients": "Radish, mustard oil, salt, chili, timur (Sichuan pepper), fenugreek, turmeric.",
+      "allergens": ["mustard"],
+      "dietary": ["vegetarian", "vegan"],
+      "spice": 2,
+      "variants": [
+        { "en": "400 g jar", "ne": "४०० ग्राम बोतल", "price": 799, "grams": 400, "stock": 45 }
+      ]
+    },
+    {
+      "slug": "ashan-kitchen-lapsi-achar",
+      "brand": "Ashan Kitchen",
+      "category": "achar-pickles",
+      "en": "Lapsi Achar (Hog Plum Pickle)",
+      "ne": "लप्सीको अचार",
+      "desc_en": "Sweet, sour and spicy pickle made from Nepali lapsi fruit.",
+      "desc_ne": "नेपाली लप्सीबाट बनेको गुलियो, अमिलो र पिरो अचार।",
+      "origin": "Nepal",
+      "ingredients": "Lapsi (hog plum), sugar, salt, chili, mustard oil, spices.",
+      "allergens": ["mustard"],
+      "dietary": ["vegetarian", "vegan"],
+      "spice": 1,
+      "variants": [
+        { "en": "300 g jar", "ne": "३०० ग्राम बोतल", "price": 699, "grams": 300, "stock": 50 }
+      ]
+    },
+    {
+      "slug": "ashan-kitchen-timur-chhop",
+      "brand": "Ashan Kitchen",
+      "category": "achar-pickles",
+      "en": "Timur ko Chhop (Chili-Timur Dip)",
+      "ne": "टिमुरको छोप",
+      "desc_en": "A tingly dry chutney of chili, timur and salt for momo, chatpate and fruit.",
+      "desc_ne": "मःम, चटपटे र फलफूलसँग खाने खुर्सानी, टिमुर र नुनको छोप।",
+      "origin": "Nepal",
+      "ingredients": "Chili, timur (Sichuan pepper), salt, garlic.",
+      "allergens": [],
+      "dietary": ["vegetarian", "vegan"],
+      "spice": 3,
+      "variants": [{ "en": "100 g", "ne": "१०० ग्राम", "price": 549, "grams": 100, "stock": 60 }]
+    },
+    {
+      "slug": "ashan-kitchen-gundruk",
+      "brand": "Ashan Kitchen",
+      "category": "achar-pickles",
+      "en": "Gundruk (Fermented Dried Greens)",
+      "ne": "गुन्द्रुक",
+      "desc_en": "Fermented and sun-dried mustard and radish greens for gundruk ko jhol and sadheko.",
+      "desc_ne": "गुन्द्रुकको झोल र साँधेकोका लागि घाममा सुकाएको गुन्द्रुक।",
+      "origin": "Nepal",
+      "ingredients": "Fermented dried mustard greens, radish greens.",
+      "allergens": [],
+      "dietary": ["vegetarian", "vegan"],
+      "spice": 0,
+      "variants": [{ "en": "200 g", "ne": "२०० ग्राम", "price": 899, "grams": 200, "stock": 35 }]
+    },
+    {
+      "slug": "ashan-kitchen-timur-whole",
+      "brand": "Ashan Kitchen",
+      "category": "spices-masala",
+      "en": "Timur (Nepali Sichuan Pepper), Whole",
+      "ne": "टिमुर",
+      "desc_en": "Citrusy, numbing Himalayan pepper for achar, chatpate and tomato chutney.",
+      "desc_ne": "अचार, चटपटे र गोलभेडाको अचारका लागि बास्नादार टिमुर।",
+      "origin": "Nepal",
+      "ingredients": "Timur (Zanthoxylum armatum).",
+      "allergens": [],
+      "dietary": ["vegetarian", "vegan"],
+      "spice": 1,
+      "variants": [{ "en": "100 g", "ne": "१०० ग्राम", "price": 699, "grams": 100, "stock": 55 }]
+    },
+    {
+      "slug": "ashan-kitchen-jimbu",
+      "brand": "Ashan Kitchen",
+      "category": "spices-masala",
+      "en": "Jimbu (Himalayan Aromatic Herb)",
+      "ne": "जिम्बु",
+      "desc_en": "The dried Himalayan herb that makes daal smell like home. Fry a pinch in ghee for jhannu.",
+      "desc_ne": "दाललाई घरको बास्ना दिने हिमाली जिम्बु। घ्यूमा थोरै भुटेर झान्नुहोस्।",
+      "origin": "Nepal",
+      "ingredients": "Dried jimbu (Allium hypsistum).",
+      "allergens": [],
+      "dietary": ["vegetarian", "vegan"],
+      "spice": 0,
+      "variants": [{ "en": "25 g", "ne": "२५ ग्राम", "price": 599, "grams": 25, "stock": 40 }]
+    },
+    {
+      "slug": "everest-meat-masala",
+      "brand": "Everest",
+      "category": "spices-masala",
+      "en": "Everest Meat Masala",
+      "ne": "एभरेस्ट मासु मसला",
+      "desc_en": "A ready spice blend for goat curry and chicken curry.",
+      "desc_ne": "खसीको मासु र कुखुराको मासुका लागि तयारी मसला।",
+      "origin": "India",
+      "ingredients": "Coriander, chili, cumin, black pepper, turmeric, dry ginger, cassia, cloves, nutmeg, mace.",
+      "allergens": [],
+      "may_contain": ["mustard"],
+      "dietary": ["vegetarian", "vegan"],
+      "spice": 2,
+      "variants": [
+        { "en": "100 g box", "ne": "१०० ग्राम", "price": 349, "grams": 100, "stock": 110 }
+      ]
+    },
+    {
+      "slug": "ashan-kitchen-sutkeri-masala",
+      "brand": "Ashan Kitchen",
+      "category": "spices-masala",
+      "en": "Sutkeri Masala (Postpartum Nutrition Mix)",
+      "ne": "सुत्केरी मसला",
+      "desc_en": "A traditional blend of dried fruits, nuts and warming spices given to new mothers.",
+      "desc_ne": "सुत्केरी आमाका लागि सुकेका फलफूल, मेवा र तातो मसलाको परम्परागत मिश्रण।",
+      "origin": "Nepal",
+      "ingredients": "Dried coconut, almonds, cashews, raisins, dates, ajwain, ginger, fenugreek, ghee.",
+      "allergens": ["tree nuts", "milk"],
+      "dietary": ["vegetarian"],
+      "spice": 0,
+      "variants": [{ "en": "400 g", "ne": "४०० ग्राम", "price": 1999, "grams": 400, "stock": 20 }]
+    },
+    {
+      "slug": "ashan-kitchen-chiura-thick",
+      "brand": "Ashan Kitchen",
+      "category": "rice-daal-chiura",
+      "en": "Chiura (Beaten Rice), Thick",
+      "ne": "चिउरा (बाक्लो)",
+      "desc_en": "Thick-cut beaten rice for samay baji, dahi chiura and the Dashain feast.",
+      "desc_ne": "समय बजी, दही चिउरा र दशैंको भोजका लागि बाक्लो चिउरा।",
+      "origin": "Nepal",
+      "ingredients": "Rice.",
+      "allergens": [],
+      "dietary": ["vegetarian", "vegan", "gluten-free"],
+      "spice": 0,
+      "tags": ["dashain"],
+      "variants": [
+        { "en": "1 kg", "ne": "१ किलो", "price": 499, "grams": 1000, "stock": 90 },
+        { "en": "2 kg", "ne": "२ किलो", "price": 899, "grams": 2000, "stock": 40 }
+      ]
+    },
+    {
+      "slug": "ashan-kitchen-jeera-masino-rice",
+      "brand": "Ashan Kitchen",
+      "category": "rice-daal-chiura",
+      "en": "Jeera Masino Rice",
+      "ne": "जीरा मसिनो चामल",
+      "desc_en": "Small-grain, fragrant everyday rice preferred across Nepali kitchens for daal bhat.",
+      "desc_ne": "दाल भातका लागि नेपाली भान्सामा रुचाइने मसिनो, बास्नादार चामल।",
+      "origin": "Nepal",
+      "ingredients": "Rice.",
+      "allergens": [],
+      "dietary": ["vegetarian", "vegan", "gluten-free"],
+      "spice": 0,
+      "variants": [
+        { "en": "10 lb bag", "ne": "१० पाउन्ड", "price": 1899, "grams": 4536, "stock": 30 },
+        {
+          "en": "20 lb bag",
+          "ne": "२० पाउन्ड",
+          "price": 3499,
+          "compare": 3798,
+          "grams": 9072,
+          "stock": 15
+        }
+      ]
+    },
+    {
+      "slug": "ashan-kitchen-masoor-daal",
+      "brand": "Ashan Kitchen",
+      "category": "rice-daal-chiura",
+      "en": "Masoor Daal (Red Lentils)",
+      "ne": "मसुरोको दाल",
+      "desc_en": "Split red lentils that cook quickly into a silky everyday daal.",
+      "desc_ne": "छिटो पाक्ने र मिठो दाल बन्ने मसुरोको दाल।",
+      "origin": "Nepal",
+      "ingredients": "Red lentils.",
+      "allergens": [],
+      "dietary": ["vegetarian", "vegan", "gluten-free"],
+      "spice": 0,
+      "variants": [{ "en": "2 lb", "ne": "२ पाउन्ड", "price": 549, "grams": 907, "stock": 75 }]
+    },
+    {
+      "slug": "ashan-select-ilam-orthodox-tea",
+      "brand": "Ashan Select",
+      "category": "tea",
+      "en": "Ilam Orthodox Black Tea",
+      "ne": "इलाम अर्थोडक्स कालो चिया",
+      "desc_en": "Whole-leaf tea from the hills of Ilam, with a bright, muscatel finish. Brew without milk.",
+      "desc_ne": "इलामका पहाडबाट आएको पूरा पातको चिया। दूध बिना पकाउनुहोस्।",
+      "origin": "Nepal",
+      "ingredients": "Black tea leaves.",
+      "allergens": [],
+      "dietary": ["vegetarian", "vegan", "gluten-free"],
+      "spice": 0,
+      "variants": [
+        { "en": "100 g tin", "ne": "१०० ग्राम", "price": 1299, "grams": 100, "stock": 40 }
+      ]
+    },
+    {
+      "slug": "tokla-ctc-tea",
+      "brand": "Tokla",
+      "category": "tea",
+      "en": "Tokla Tea (CTC)",
+      "ne": "टोक्ला चिया",
+      "desc_en": "Strong granular tea for proper doodh chiya with milk and sugar.",
+      "desc_ne": "दूध र चिनीसहितको दूध चियाका लागि कडा दानादार चिया।",
+      "origin": "Nepal",
+      "ingredients": "Black tea (CTC).",
+      "allergens": [],
+      "dietary": ["vegetarian", "vegan", "gluten-free"],
+      "spice": 0,
+      "tags": ["bestseller"],
+      "variants": [{ "en": "500 g", "ne": "५०० ग्राम", "price": 899, "grams": 500, "stock": 85 }]
+    },
+    {
+      "slug": "ashan-kitchen-lapsi-titaura",
+      "brand": "Ashan Kitchen",
+      "category": "sweets",
+      "en": "Lapsi Titaura (Sweet & Sour Fruit Candy)",
+      "ne": "लप्सीको तितौरा",
+      "desc_en": "Chewy candy from Nepali lapsi with sugar, salt and a little chili. Pure childhood.",
+      "desc_ne": "चिनी, नुन र अलिकति खुर्सानीसहितको लप्सीको तितौरा। बाल्यकालको स्वाद।",
+      "origin": "Nepal",
+      "ingredients": "Lapsi (hog plum) pulp, sugar, salt, chili, timur.",
+      "allergens": [],
+      "dietary": ["vegetarian", "vegan"],
+      "spice": 1,
+      "tags": ["bestseller", "tihar"],
+      "variants": [{ "en": "200 g", "ne": "२०० ग्राम", "price": 499, "grams": 200, "stock": 100 }]
+    },
+    {
+      "slug": "haldirams-rasgulla",
+      "brand": "Haldiram's",
+      "category": "sweets",
+      "en": "Haldiram's Rasgulla",
+      "ne": "हल्दिरामको रसगुल्ला",
+      "desc_en": "Soft cheese dumplings in light syrup. Serve chilled for Tihar guests.",
+      "desc_ne": "हल्का चासनीमा नरम रसगुल्ला। तिहारमा पाहुनालाई चिसो बनाएर दिनुहोस्।",
+      "origin": "India",
+      "ingredients": "Sugar, water, milk solids (chhena), wheat flour (maida), cardamom.",
+      "allergens": ["milk", "wheat"],
+      "dietary": ["vegetarian"],
+      "spice": 0,
+      "tags": ["tihar"],
+      "variants": [
+        { "en": "1 kg tin", "ne": "१ किलो टिन", "price": 699, "grams": 1000, "stock": 60 }
+      ]
+    },
+    {
+      "slug": "ashan-kitchen-chicken-momo",
+      "brand": "Ashan Kitchen",
+      "category": "frozen",
+      "en": "Chicken Momo (Frozen)",
+      "ne": "कुखुराको मःम (फ्रोजन)",
+      "desc_en": "Hand-folded chicken momo with onion, ginger and coriander. Steam from frozen in 12 minutes. Local delivery and pickup only.",
+      "desc_ne": "प्याज, अदुवा र धनियाँसहित हातले बनाएको कुखुराको मःम। १२ मिनेट बाफमा पकाउनुहोस्। स्थानीय डेलिभरी र पिकअप मात्र।",
+      "origin": "USA",
+      "ingredients": "Chicken, wheat flour, onion, ginger, garlic, coriander, salt, spices, water.",
+      "allergens": ["wheat"],
+      "may_contain": ["soy", "sesame"],
+      "spice": 1,
+      "tags": ["bestseller"],
+      "variants": [
+        {
+          "en": "20 pieces",
+          "ne": "२० वटा",
+          "price": 1299,
+          "grams": 600,
+          "stock": 50,
+          "shipping": "frozen"
+        },
+        {
+          "en": "50 pieces",
+          "ne": "५० वटा",
+          "price": 2999,
+          "compare": 3248,
+          "grams": 1500,
+          "stock": 20,
+          "shipping": "frozen"
+        }
+      ]
+    },
+    {
+      "slug": "ashan-select-nepali-dhoop",
+      "brand": "Ashan Select",
+      "category": "puja-samagri",
+      "en": "Nepali Dhoop (Incense Sticks)",
+      "ne": "नेपाली धूप",
+      "desc_en": "Handmade Himalayan herbal incense for daily puja and festivals.",
+      "desc_ne": "दैनिक पूजा र चाडपर्वका लागि हातले बनाएको हिमाली जडीबुटी धूप।",
+      "origin": "Nepal",
+      "ingredients": "Not a food. Juniper, sandalwood powder, herbs, natural binder.",
+      "allergens": [],
+      "spice": null,
+      "tags": ["tihar"],
+      "variants": [
+        { "en": "Pack of 30 sticks", "ne": "३० वटा", "price": 599, "grams": 120, "stock": 80 }
+      ]
+    }
+  ]
+}

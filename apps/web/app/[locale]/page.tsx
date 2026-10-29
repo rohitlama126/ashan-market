@@ -1,8 +1,14 @@
 import { createI18n, isLocale, resources } from '@ashan/i18n';
 import { ArrowRight, Sparkles } from 'lucide-react';
 import { notFound } from 'next/navigation';
+import { connection } from 'next/server';
+import { Suspense } from 'react';
 import { HeroArt } from '../../components/hero-art.tsx';
 import { categoryIcons } from '../../components/category-icons.ts';
+import { ProductCard } from '../../components/product-card.tsx';
+import { getFeaturedProducts } from '../../lib/catalog.ts';
+import { supabaseEnv } from '../../lib/supabase/env.ts';
+import type { Locale } from '@ashan/i18n';
 
 const categorySlugs = Object.keys(
   resources.en.categories,
@@ -70,6 +76,43 @@ export default async function HomePage({ params }: PageProps<'/[locale]'>) {
           })}
         </ul>
       </section>
+
+      <section aria-labelledby="popular-title" className="mt-12">
+        <h2 id="popular-title" className="text-2xl font-semibold tracking-tight">
+          {t('product.popular')}
+        </h2>
+        <Suspense fallback={<ProductGridSkeleton />}>
+          <PopularProducts locale={locale} />
+        </Suspense>
+      </section>
     </main>
+  );
+}
+
+const gridClass = 'mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-5';
+
+// 5 x 5 on desktop. Reads live prices and stock, so it renders per request.
+async function PopularProducts({ locale }: { locale: Locale }) {
+  await connection();
+  if (!supabaseEnv()) return null;
+  const products = await getFeaturedProducts(locale, 25);
+  return (
+    <ul className={gridClass}>
+      {products.map((p) => (
+        <li key={p.id}>
+          <ProductCard product={p} locale={locale} />
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+function ProductGridSkeleton() {
+  return (
+    <ul className={gridClass} aria-hidden="true">
+      {Array.from({ length: 10 }, (_, i) => (
+        <li key={i} className="glass aspect-[3/4] animate-pulse rounded-lg" />
+      ))}
+    </ul>
   );
 }

@@ -73,7 +73,12 @@ select throws_ok(
 -- Staff
 set local role authenticated;
 set local request.jwt.claims = '{"sub":"33333333-3333-3333-3333-333333333333","role":"authenticated"}';
-select is((select count(*)::int from public.profiles), 3, 'staff can read all profiles');
+select is(
+  (select count(*)::int from public.profiles where id in (
+    '11111111-1111-1111-1111-111111111111', '22222222-2222-2222-2222-222222222222',
+    '33333333-3333-3333-3333-333333333333')),
+  3, 'staff can read every profile, not just their own'
+);
 reset role;
 
 -- Account deletion

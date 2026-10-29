@@ -1,7 +1,7 @@
 'use client';
 import type { Locale } from '@ashan/i18n';
 import { EmailSchema, OtpCodeSchema, UsPhoneSchema } from '@ashan/schemas';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useSearchParams } from 'next/navigation';
 import { useId, useState, type FormEvent } from 'react';
 import { useT } from '../../lib/i18n-client.ts';
 import { safeNextPath } from '../../lib/safe-redirect.ts';
@@ -20,7 +20,6 @@ const secondaryButton =
 
 export function SignInForm({ locale }: { locale: Locale }) {
   const t = useT(locale);
-  const router = useRouter();
   const next = safeNextPath(useSearchParams().get('next'), `/${locale}/account`);
   const [channel, setChannel] = useState<Channel>('email');
   const [step, setStep] = useState<Step>({ kind: 'enter' });
@@ -71,8 +70,9 @@ export function SignInForm({ locale }: { locale: Locale }) {
       setError(t('auth.errorInvalidCode'));
       return;
     }
-    router.replace(next);
-    router.refresh();
+    // Full page load so the server renders the destination with the new session cookies.
+    // (router.replace + router.refresh can race and leave the user on this page.)
+    window.location.assign(next);
   }
 
   async function oauth(provider: 'apple' | 'google') {
@@ -151,6 +151,11 @@ export function SignInForm({ locale }: { locale: Locale }) {
 
   return (
     <div className="flex flex-col gap-4">
+      {next.endsWith('/checkout') && (
+        <p role="status" className="glass-subtle rounded-lg p-3 text-sm">
+          {t('checkout.signInFirst')}
+        </p>
+      )}
       <button type="button" className={secondaryButton} onClick={() => void oauth('apple')}>
         {t('auth.continueWithApple')}
       </button>

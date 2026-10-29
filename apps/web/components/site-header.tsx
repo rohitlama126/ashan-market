@@ -2,6 +2,7 @@ import { createI18n, locales, type Locale } from '@ashan/i18n';
 import Image from 'next/image';
 import Link from 'next/link';
 import stupa from '../public/brand/stupa.png';
+import { CartLink } from './cart-link.tsx';
 
 export function SiteHeader({ locale }: { locale: Locale }) {
   const { t } = createI18n(locale);
@@ -42,6 +43,7 @@ export function SiteHeader({ locale }: { locale: Locale }) {
               </Link>
             ))}
           </nav>
+          <CartLink locale={locale} />
           <Link
             href={`/${locale}/account`}
             className="bg-primary text-primary-text hover:bg-primary-hover inline-flex min-h-11 items-center rounded-full px-4 text-sm font-semibold transition"

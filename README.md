@@ -47,6 +47,16 @@ pnpm db:start        # starts local Supabase in Docker; copy the printed anon ke
 | `pnpm tokens`                            | Regenerate `packages/tokens/generated/tokens.css` after editing tokens |
 | `pnpm db:start` / `db:stop` / `db:reset` | Local Supabase lifecycle                                               |
 
+## Demo shopper (local only)
+
+`pnpm db:reset` loads 25 sample products and a demo customer:
+
+- **Sign in:** Account → _Use a phone number instead_ → `(718) 555-0134` → code `123456`
+- **Name / ZIP:** Sita Gurung, 11372
+
+Products live in `supabase/seed/catalog.json`; after editing, run `pnpm db:seed:build && pnpm db:reset`.
+Prices and ingredient/allergen text there are sample data, not verified against real labels.
+
 ## Testing sign-in locally
 
 With `pnpm db:start` running and the printed anon key in both `.env.local` files:
