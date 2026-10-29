@@ -1,7 +1,7 @@
 import { createI18n, isLocale, resources } from '@ashan/i18n';
 import { ArrowRight, Sparkles } from 'lucide-react';
 import { notFound } from 'next/navigation';
-import { HeroArt } from '../../components/backdrop.tsx';
+import { HeroArt } from '../../components/hero-art.tsx';
 import { categoryIcons } from '../../components/category-icons.ts';
 
 const categorySlugs = Object.keys(
@@ -46,7 +46,7 @@ export default async function HomePage({ params }: PageProps<'/[locale]'>) {
           </div>
           <p className="text-text-muted mt-6 text-sm">{t('app.comingSoon')}</p>
         </div>
-        <HeroArt className="text-text mt-8 h-48 w-full sm:h-56 lg:mt-0 lg:h-72" />
+        <HeroArt className="mt-8 w-full rounded-[22px] shadow-lg shadow-black/20 lg:mt-0" />
       </section>
 
       <section aria-labelledby="categories-title" id="categories" className="mt-12 scroll-mt-24">
