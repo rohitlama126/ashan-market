@@ -87,6 +87,10 @@ insert into public.product_compliance (product_id, country_of_origin, ingredient
 select id, 'Nepal', 'Wheat flour, vegetable oil, salt, seasoning (onion, garlic, black pepper).', array['wheat']::text[], array[]::text[], 'Rara', false
 from public.products where slug = 'rara-noodles';
 
+insert into public.product_images (product_id, path, alt_en, alt_ne, credit_author, credit_license, credit_license_url, credit_source_url, credit_note)
+select id, '/products/rara-noodles.jpg', 'Rara Instant Noodles', 'रारा चाउचाउ', 'Gaurav Dhwaj Khadka', 'CC BY-SA 4.0', 'https://creativecommons.org/licenses/by-sa/4.0', 'https://commons.wikimedia.org/wiki/File:Rara_Noodles.jpg', 'cropped and resized'
+from public.products where slug = 'rara-noodles';
+
 insert into public.variants (product_id, sku, title_en, title_ne, price_cents, compare_at_cents, net_weight_g, shipping_class, sort)
 select id, 'AM-003-1', 'Pack of 5', '५ प्याकेट', 449, null, 375, 'ambient', 0
 from public.products where slug = 'rara-noodles';
@@ -138,6 +142,10 @@ insert into public.product_compliance (product_id, country_of_origin, ingredient
 select id, 'Nepal', 'Puffed rice, peanuts, vegetable oil, salt, turmeric, chili, curry leaves.', array['peanuts']::text[], array[]::text[], 'Ashan Kitchen', false
 from public.products where slug = 'ashan-kitchen-bhuja';
 
+insert into public.product_images (product_id, path, alt_en, alt_ne, credit_author, credit_license, credit_license_url, credit_source_url, credit_note)
+select id, '/products/ashan-kitchen-bhuja.jpg', 'Bhuja (Puffed Rice Mix)', 'भुजा', 'Gaurav Dhwaj Khadka', 'CC BY-SA 4.0', 'https://creativecommons.org/licenses/by-sa/4.0', 'https://commons.wikimedia.org/wiki/File:Muri_Bhujiya.jpg', 'cropped and resized'
+from public.products where slug = 'ashan-kitchen-bhuja';
+
 insert into public.variants (product_id, sku, title_en, title_ne, price_cents, compare_at_cents, net_weight_g, shipping_class, sort)
 select id, 'AM-006-1', '200 g', '२०० ग्राम', 399, null, 200, 'ambient', 0
 from public.products where slug = 'ashan-kitchen-bhuja';
@@ -153,6 +161,10 @@ where v.slug = 'ashan-market' and b.slug = 'ashan-kitchen' and c.slug = 'snacks-
 
 insert into public.product_compliance (product_id, country_of_origin, ingredients_en, allergens, may_contain, manufacturer_name, english_label_verified)
 select id, 'Nepal', 'Lentils, chickpea flour, peanuts, vegetable oil, salt, chili, mango powder, spices.', array['peanuts']::text[], array['tree nuts']::text[], 'Ashan Kitchen', false
+from public.products where slug = 'ashan-kitchen-dalmot';
+
+insert into public.product_images (product_id, path, alt_en, alt_ne, credit_author, credit_license, credit_license_url, credit_source_url, credit_note)
+select id, '/products/ashan-kitchen-dalmot.jpg', 'Dalmot (Spiced Lentil Mix)', 'दालमोठ', 'Gaurav Dhwaj Khadka', 'CC BY-SA 4.0', 'https://creativecommons.org/licenses/by-sa/4.0', 'https://commons.wikimedia.org/wiki/File:Dalmoth_1.jpg', 'cropped and resized'
 from public.products where slug = 'ashan-kitchen-dalmot';
 
 insert into public.variants (product_id, sku, title_en, title_ne, price_cents, compare_at_cents, net_weight_g, shipping_class, sort)
@@ -194,6 +206,10 @@ where v.slug = 'ashan-market' and b.slug = 'ashan-kitchen' and c.slug = 'achar-p
 
 insert into public.product_compliance (product_id, country_of_origin, ingredients_en, allergens, may_contain, manufacturer_name, english_label_verified)
 select id, 'Nepal', 'Radish, mustard oil, salt, chili, timur (Sichuan pepper), fenugreek, turmeric.', array['mustard']::text[], array[]::text[], 'Ashan Kitchen', false
+from public.products where slug = 'ashan-kitchen-mula-achar';
+
+insert into public.product_images (product_id, path, alt_en, alt_ne, credit_author, credit_license, credit_license_url, credit_source_url, credit_note)
+select id, '/products/ashan-kitchen-mula-achar.jpg', 'Mula ko Achar (Radish Pickle)', 'मुलाको अचार', 'Gaurav Dhwaj Khadka', 'CC BY-SA 4.0', 'https://creativecommons.org/licenses/by-sa/4.0', 'https://commons.wikimedia.org/wiki/File:Mula_Ko_Achar.jpg', 'cropped and resized'
 from public.products where slug = 'ashan-kitchen-mula-achar';
 
 insert into public.variants (product_id, sku, title_en, title_ne, price_cents, compare_at_cents, net_weight_g, shipping_class, sort)
@@ -245,6 +261,10 @@ where v.slug = 'ashan-market' and b.slug = 'ashan-kitchen' and c.slug = 'achar-p
 
 insert into public.product_compliance (product_id, country_of_origin, ingredients_en, allergens, may_contain, manufacturer_name, english_label_verified)
 select id, 'Nepal', 'Fermented dried mustard greens, radish greens.', array[]::text[], array[]::text[], 'Ashan Kitchen', false
+from public.products where slug = 'ashan-kitchen-gundruk';
+
+insert into public.product_images (product_id, path, alt_en, alt_ne, credit_author, credit_license, credit_license_url, credit_source_url, credit_note)
+select id, '/products/ashan-kitchen-gundruk.jpg', 'Gundruk (Fermented Dried Greens)', 'गुन्द्रुक', 'Krish Dulal', 'CC BY-SA 3.0', 'https://creativecommons.org/licenses/by-sa/3.0', 'https://commons.wikimedia.org/wiki/File:Gundruk_NP.jpg', 'cropped and resized'
 from public.products where slug = 'ashan-kitchen-gundruk';
 
 insert into public.variants (product_id, sku, title_en, title_ne, price_cents, compare_at_cents, net_weight_g, shipping_class, sort)
@@ -332,6 +352,10 @@ insert into public.product_compliance (product_id, country_of_origin, ingredient
 select id, 'Nepal', 'Rice.', array[]::text[], array[]::text[], 'Ashan Kitchen', false
 from public.products where slug = 'ashan-kitchen-chiura-thick';
 
+insert into public.product_images (product_id, path, alt_en, alt_ne, credit_author, credit_license, credit_license_url, credit_source_url, credit_note)
+select id, '/products/ashan-kitchen-chiura-thick.jpg', 'Chiura (Beaten Rice), Thick', 'चिउरा (बाक्लो)', 'Ajay Suresh from New York, NY, USA', 'CC BY 2.0', 'https://creativecommons.org/licenses/by/2.0', 'https://commons.wikimedia.org/wiki/File:Flattened_Rice_(Poha)_(49684434042).jpg', 'cropped and resized'
+from public.products where slug = 'ashan-kitchen-chiura-thick';
+
 insert into public.variants (product_id, sku, title_en, title_ne, price_cents, compare_at_cents, net_weight_g, shipping_class, sort)
 select id, 'AM-017-1', '1 kg', '१ किलो', 499, null, 1000, 'ambient', 0
 from public.products where slug = 'ashan-kitchen-chiura-thick';
@@ -356,6 +380,10 @@ insert into public.product_compliance (product_id, country_of_origin, ingredient
 select id, 'Nepal', 'Rice.', array[]::text[], array[]::text[], 'Ashan Kitchen', false
 from public.products where slug = 'ashan-kitchen-jeera-masino-rice';
 
+insert into public.product_images (product_id, path, alt_en, alt_ne, credit_author, credit_license, credit_license_url, credit_source_url, credit_note)
+select id, '/products/ashan-kitchen-jeera-masino-rice.jpg', 'Jeera Masino Rice', 'जीरा मसिनो चामल', 'Zahoor Ahmad Reshi', 'CC0', 'http://creativecommons.org/publicdomain/zero/1.0/deed.en', 'https://commons.wikimedia.org/wiki/File:Mushqbudji_rice_grains_close-up.jpg', 'cropped and resized'
+from public.products where slug = 'ashan-kitchen-jeera-masino-rice';
+
 insert into public.variants (product_id, sku, title_en, title_ne, price_cents, compare_at_cents, net_weight_g, shipping_class, sort)
 select id, 'AM-018-1', '10 lb bag', '१० पाउन्ड', 1899, null, 4536, 'ambient', 0
 from public.products where slug = 'ashan-kitchen-jeera-masino-rice';
@@ -378,6 +406,10 @@ where v.slug = 'ashan-market' and b.slug = 'ashan-kitchen' and c.slug = 'rice-da
 
 insert into public.product_compliance (product_id, country_of_origin, ingredients_en, allergens, may_contain, manufacturer_name, english_label_verified)
 select id, 'Nepal', 'Red lentils.', array[]::text[], array[]::text[], 'Ashan Kitchen', false
+from public.products where slug = 'ashan-kitchen-masoor-daal';
+
+insert into public.product_images (product_id, path, alt_en, alt_ne, credit_author, credit_license, credit_license_url, credit_source_url, credit_note)
+select id, '/products/ashan-kitchen-masoor-daal.jpg', 'Masoor Daal (Red Lentils)', 'मसुरोको दाल', 'Sanjay Acharya', 'CC BY-SA 4.0', 'https://creativecommons.org/licenses/by-sa/4.0', 'https://commons.wikimedia.org/wiki/File:Split_Red_Lentil.jpg', 'cropped and resized'
 from public.products where slug = 'ashan-kitchen-masoor-daal';
 
 insert into public.variants (product_id, sku, title_en, title_ne, price_cents, compare_at_cents, net_weight_g, shipping_class, sort)
@@ -463,6 +495,10 @@ where v.slug = 'ashan-market' and b.slug = 'ashan-kitchen' and c.slug = 'frozen'
 
 insert into public.product_compliance (product_id, country_of_origin, ingredients_en, allergens, may_contain, manufacturer_name, english_label_verified)
 select id, 'USA', 'Chicken, wheat flour, onion, ginger, garlic, coriander, salt, spices, water.', array['wheat']::text[], array['soy', 'sesame']::text[], 'Ashan Kitchen', false
+from public.products where slug = 'ashan-kitchen-chicken-momo';
+
+insert into public.product_images (product_id, path, alt_en, alt_ne, credit_author, credit_license, credit_license_url, credit_source_url, credit_note)
+select id, '/products/ashan-kitchen-chicken-momo.jpg', 'Chicken Momo (Frozen)', 'कुखुराको मःम (फ्रोजन)', 'TAPAS KUMAR HALDER', 'CC BY-SA 4.0', 'https://creativecommons.org/licenses/by-sa/4.0', 'https://commons.wikimedia.org/wiki/File:Steamed_Momos_-_KOLKATA.jpg', 'cropped and resized'
 from public.products where slug = 'ashan-kitchen-chicken-momo';
 
 insert into public.variants (product_id, sku, title_en, title_ne, price_cents, compare_at_cents, net_weight_g, shipping_class, sort)

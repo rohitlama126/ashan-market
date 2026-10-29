@@ -1,11 +1,11 @@
-import { createI18n, isLocale, type Locale } from '@ashan/i18n';
+import { createI18n, isLocale } from '@ashan/i18n';
 import { ChevronRight, Flame, Leaf } from 'lucide-react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { connection } from 'next/server';
 import { Suspense } from 'react';
-import { ProductArt } from '../../../../components/product-art.tsx';
+import { ImageCredit, ProductImage } from '../../../../components/product-image.tsx';
 import { ProductCard } from '../../../../components/product-card.tsx';
 import { ProductPurchase } from '../../../../components/product-purchase.tsx';
 import { getProduct } from '../../../../lib/catalog.ts';
@@ -71,7 +71,16 @@ async function ProductDetail({ params }: { params: Promise<{ locale: string; slu
 
       <div className="grid gap-8 lg:grid-cols-2">
         <div className="glass h-fit overflow-hidden rounded-xl">
-          <ProductArt categorySlug={p.categorySlug} brand={p.brand} size="lg" className="w-full" />
+          <ProductImage
+            image={p.image}
+            categorySlug={p.categorySlug}
+            brand={p.brand}
+            size="lg"
+            sizes="(min-width: 1024px) 50vw, 100vw"
+            priority
+            className="w-full"
+          />
+          <ImageCredit image={p.image} label={t('product.photoCredit')} />
         </div>
 
         <div className="glass flex flex-col gap-5 rounded-xl p-6 sm:p-8">

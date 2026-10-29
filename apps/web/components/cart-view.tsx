@@ -7,7 +7,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { cart, useCart, type CartItem } from '../lib/cart.ts';
 import { getCartLines, type CartLineView } from '../lib/catalog.ts';
 import { useT } from '../lib/i18n-client.ts';
-import { ProductArt } from './product-art.tsx';
+import { ProductImage } from './product-image.tsx';
 
 export interface PricedLine extends CartLineView {
   qty: number;
@@ -82,7 +82,13 @@ export function CartView({ locale }: { locale: Locale }) {
               href={`/${locale}/p/${l.productSlug}`}
               className="w-20 shrink-0 overflow-hidden rounded-md sm:w-24"
             >
-              <ProductArt categorySlug={l.categorySlug} brand={l.brand} size="sm" />
+              <ProductImage
+                image={l.image}
+                categorySlug={l.categorySlug}
+                brand={l.brand}
+                size="sm"
+                sizes="96px"
+              />
               <span className="sr-only">{l.productName}</span>
             </Link>
             <div className="flex min-w-0 flex-1 flex-col gap-1">

@@ -156,6 +156,57 @@ export type Database = {
           },
         ];
       };
+      product_images: {
+        Row: {
+          alt_en: string;
+          alt_ne: string;
+          credit_author: string | null;
+          credit_license: string | null;
+          credit_license_url: string | null;
+          credit_note: string | null;
+          credit_source_url: string | null;
+          id: string;
+          path: string;
+          product_id: string;
+          sort: number;
+        };
+        ComputedFields: never;
+        Insert: {
+          alt_en: string;
+          alt_ne: string;
+          credit_author?: string | null;
+          credit_license?: string | null;
+          credit_license_url?: string | null;
+          credit_note?: string | null;
+          credit_source_url?: string | null;
+          id?: string;
+          path: string;
+          product_id: string;
+          sort?: number;
+        };
+        Update: {
+          alt_en?: string;
+          alt_ne?: string;
+          credit_author?: string | null;
+          credit_license?: string | null;
+          credit_license_url?: string | null;
+          credit_note?: string | null;
+          credit_source_url?: string | null;
+          id?: string;
+          path?: string;
+          product_id?: string;
+          sort?: number;
+        };
+        Relationships: [
+          {
+            foreignKeyName: 'product_images_product_id_fkey';
+            columns: ['product_id'];
+            isOneToOne: false;
+            referencedRelation: 'products';
+            referencedColumns: ['id'];
+          },
+        ];
+      };
       products: {
         Row: {
           brand_id: string | null;

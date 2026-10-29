@@ -127,7 +127,8 @@
     "vegan": "Vegan",
     "gluten-free": "Gluten-free",
     "home": "Home",
-    "notFound": "We couldn't find that product."
+    "notFound": "We couldn't find that product.",
+    "photoCredit": "Photo"
   },
   "checkout": {
     "title": "Checkout",
@@ -139,5 +140,9 @@
     "placeOrder": "Place order",
     "editCart": "Edit cart",
     "noAddressYet": "You'll add a delivery address here in the next update."
+  },
+  "credits": {
+    "title": "Photo credits",
+    "intro": "These product photos come from Wikimedia Commons and are used under the open licenses shown. Thank you to the photographers."
   }
 }

@@ -18,6 +18,18 @@ export interface VariantView {
   available: number;
 }
 
+export interface ProductImageView {
+  path: string;
+  alt: string;
+  credit: {
+    author: string | null;
+    license: string | null;
+    licenseUrl: string | null;
+    sourceUrl: string | null;
+    note: string | null;
+  };
+}
+
 export interface ProductCardView {
   id: string;
   slug: string;
@@ -26,6 +38,7 @@ export interface ProductCardView {
   categorySlug: string;
   categoryName: string;
   tags: string[];
+  image: ProductImageView | null;
   variants: VariantView[];
 }
 
@@ -65,8 +78,37 @@ const PRODUCT_SELECT = `
   id, slug, name_en, name_ne, description_en, description_ne, tags, dietary, spice_level, featured_rank,
   brands ( name ),
   categories ( slug, name_en, name_ne ),
-  variants ( id, title_en, title_ne, price_cents, compare_at_cents, net_weight_g, shipping_class, sort, is_active )
+  variants ( id, title_en, title_ne, price_cents, compare_at_cents, net_weight_g, shipping_class, sort, is_active ),
+  product_images ( path, alt_en, alt_ne, sort, credit_author, credit_license, credit_license_url, credit_source_url, credit_note )
 `;
+
+type ImageRow = {
+  path: string;
+  alt_en: string;
+  alt_ne: string;
+  sort: number;
+  credit_author: string | null;
+  credit_license: string | null;
+  credit_license_url: string | null;
+  credit_source_url: string | null;
+  credit_note: string | null;
+};
+
+function toImage(rows: ImageRow[], locale: Locale): ProductImageView | null {
+  const first = [...rows].sort((a, b) => a.sort - b.sort)[0];
+  if (!first) return null;
+  return {
+    path: first.path,
+    alt: locale === 'ne' ? first.alt_ne : first.alt_en,
+    credit: {
+      author: first.credit_author,
+      license: first.credit_license,
+      licenseUrl: first.credit_license_url,
+      sourceUrl: first.credit_source_url,
+      note: first.credit_note,
+    },
+  };
+}
 
 type ProductRow = {
   id: string;
@@ -91,6 +133,7 @@ type ProductRow = {
     sort: number;
     is_active: boolean;
   }[];
+  product_images: ImageRow[];
 };
 
 async function stockFor(client: Client, variantIds: string[]): Promise<Map<string, number>> {
@@ -113,6 +156,7 @@ function toCard(row: ProductRow, locale: Locale, stock: Map<string, number>): Pr
     categorySlug: row.categories?.slug ?? '',
     categoryName: (ne ? row.categories?.name_ne : row.categories?.name_en) ?? '',
     tags: row.tags,
+    image: toImage(row.product_images, locale),
     variants: row.variants
       .filter((v) => v.is_active)
       .sort((a, b) => a.sort - b.sort)
@@ -220,6 +264,7 @@ export interface CartLineView {
   compareAtCents: number | null;
   shippingClass: ShippingClass;
   available: number;
+  image: ProductImageView | null;
 }
 
 /** Current details for the variants in a cart (prices always come from the database). */
@@ -229,7 +274,7 @@ export async function getCartLines(locale: Locale, variantIds: string[]): Promis
   const { data, error } = await client
     .from('variants')
     .select(
-      'id, title_en, title_ne, price_cents, compare_at_cents, shipping_class, products ( slug, name_en, name_ne, brands ( name ), categories ( slug ) )',
+      'id, title_en, title_ne, price_cents, compare_at_cents, shipping_class, products ( slug, name_en, name_ne, brands ( name ), categories ( slug ), product_images ( path, alt_en, alt_ne, sort, credit_author, credit_license, credit_license_url, credit_source_url, credit_note ) )',
     )
     .in('id', variantIds)
     .overrideTypes<
@@ -246,6 +291,7 @@ export async function getCartLines(locale: Locale, variantIds: string[]): Promis
           name_ne: string;
           brands: { name: string } | null;
           categories: { slug: string } | null;
+          product_images: ImageRow[];
         } | null;
       }[],
       { merge: false }
@@ -264,5 +310,6 @@ export async function getCartLines(locale: Locale, variantIds: string[]): Promis
     compareAtCents: v.compare_at_cents,
     shippingClass: v.shipping_class,
     available: stock.get(v.id) ?? 0,
+    image: toImage(v.products?.product_images ?? [], locale),
   }));
 }

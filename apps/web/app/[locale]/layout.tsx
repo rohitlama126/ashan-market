@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter, Mukta } from 'next/font/google';
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { createI18n, isLocale, locales } from '@ashan/i18n';
 import { Backdrop } from '../../components/backdrop.tsx';
@@ -43,6 +44,10 @@ export default async function LocaleLayout({ children, params }: LayoutProps<'/[
           <span className={`font-semibold ${locale === 'en' ? 'tracking-[0.14em] uppercase' : ''}`}>
             {createI18n(locale).t('app.name')}
           </span>
+          <span aria-hidden="true"> · </span>
+          <Link href={`/${locale}/credits`} className="underline-offset-2 hover:underline">
+            {createI18n(locale).t('credits.title')}
+          </Link>
         </footer>
       </body>
     </html>

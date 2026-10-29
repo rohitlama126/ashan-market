@@ -2,7 +2,7 @@ import { createI18n, formatMoney, type Locale } from '@ashan/i18n';
 import Link from 'next/link';
 import type { ProductCardView } from '../lib/catalog.ts';
 import { AddToCartButton } from './add-to-cart-button.tsx';
-import { ProductArt } from './product-art.tsx';
+import { ProductImage } from './product-image.tsx';
 
 export function ProductCard({ product, locale }: { product: ProductCardView; locale: Locale }) {
   const { t } = createI18n(locale);
@@ -16,7 +16,13 @@ export function ProductCard({ product, locale }: { product: ProductCardView; loc
 
   return (
     <article className="glass group relative flex h-full flex-col overflow-hidden rounded-lg transition duration-200 hover:-translate-y-0.5 hover:shadow-xl motion-reduce:transition-none motion-reduce:hover:translate-y-0">
-      <ProductArt categorySlug={product.categorySlug} brand={product.brand} className="w-full" />
+      <ProductImage
+        image={product.image}
+        categorySlug={product.categorySlug}
+        brand={product.brand}
+        sizes="(min-width: 1024px) 20vw, (min-width: 640px) 33vw, 50vw"
+        className="w-full"
+      />
       {v.compareAtCents ? (
         <span className="bg-sale text-primary-text absolute top-2 left-2 rounded-full px-2 py-0.5 text-xs font-bold">
           {t('product.save', { amount: formatMoney(v.compareAtCents - v.priceCents) })}

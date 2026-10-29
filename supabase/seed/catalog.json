@@ -1,16 +1,56 @@
 {
   "_note": "Local sample catalog. Prices are illustrative. Ingredients/allergens are sample text, NOT verified against real labels (english_label_verified=false); staff must review before launch. Run `pnpm db:seed:build` after editing.",
   "categories": [
-    { "slug": "snacks-namkeen", "en": "Snacks & Namkeen", "ne": "खाजा र नमकीन" },
-    { "slug": "noodles", "en": "Noodles", "ne": "चाउचाउ" },
-    { "slug": "achar-pickles", "en": "Achar & Pickles", "ne": "अचार" },
-    { "slug": "spices-masala", "en": "Spices & Masala", "ne": "मसला" },
-    { "slug": "rice-daal-chiura", "en": "Rice, Daal & Chiura", "ne": "चामल, दाल र चिउरा" },
-    { "slug": "tea", "en": "Tea", "ne": "चिया" },
-    { "slug": "sweets", "en": "Sweets", "ne": "मिठाई" },
-    { "slug": "frozen", "en": "Frozen", "ne": "फ्रोजन" },
-    { "slug": "puja-samagri", "en": "Puja Samagri", "ne": "पूजा सामग्री" },
-    { "slug": "household", "en": "Household", "ne": "घरायसी" }
+    {
+      "slug": "snacks-namkeen",
+      "en": "Snacks & Namkeen",
+      "ne": "खाजा र नमकीन"
+    },
+    {
+      "slug": "noodles",
+      "en": "Noodles",
+      "ne": "चाउचाउ"
+    },
+    {
+      "slug": "achar-pickles",
+      "en": "Achar & Pickles",
+      "ne": "अचार"
+    },
+    {
+      "slug": "spices-masala",
+      "en": "Spices & Masala",
+      "ne": "मसला"
+    },
+    {
+      "slug": "rice-daal-chiura",
+      "en": "Rice, Daal & Chiura",
+      "ne": "चामल, दाल र चिउरा"
+    },
+    {
+      "slug": "tea",
+      "en": "Tea",
+      "ne": "चिया"
+    },
+    {
+      "slug": "sweets",
+      "en": "Sweets",
+      "ne": "मिठाई"
+    },
+    {
+      "slug": "frozen",
+      "en": "Frozen",
+      "ne": "फ्रोजन"
+    },
+    {
+      "slug": "puja-samagri",
+      "en": "Puja Samagri",
+      "ne": "पूजा सामग्री"
+    },
+    {
+      "slug": "household",
+      "en": "Household",
+      "ne": "घरायसी"
+    }
   ],
   "products": [
     {
@@ -67,7 +107,13 @@
           "grams": 75,
           "stock": 350
         },
-        { "en": "Box of 30", "ne": "३० प्याकेटको बक्स", "price": 2399, "grams": 2250, "stock": 40 }
+        {
+          "en": "Box of 30",
+          "ne": "३० प्याकेटको बक्स",
+          "price": 2399,
+          "grams": 2250,
+          "stock": 40
+        }
       ]
     },
     {
@@ -84,8 +130,25 @@
       "dietary": ["vegetarian"],
       "spice": 0,
       "variants": [
-        { "en": "Pack of 5", "ne": "५ प्याकेट", "price": 449, "grams": 375, "stock": 120 }
-      ]
+        {
+          "en": "Pack of 5",
+          "ne": "५ प्याकेट",
+          "price": 449,
+          "grams": 375,
+          "stock": 120
+        }
+      ],
+      "image": {
+        "path": "/products/rara-noodles.jpg",
+        "credit": {
+          "title": "Rara Noodles.jpg",
+          "author": "Gaurav Dhwaj Khadka",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source": "https://commons.wikimedia.org/wiki/File:Rara_Noodles.jpg",
+          "modified": "cropped and resized"
+        }
+      }
     },
     {
       "slug": "mayos-chicken-noodles",
@@ -101,7 +164,13 @@
       "may_contain": ["soy", "milk"],
       "spice": 2,
       "variants": [
-        { "en": "Pack of 5", "ne": "५ प्याकेट", "price": 499, "grams": 350, "stock": 90 }
+        {
+          "en": "Pack of 5",
+          "ne": "५ प्याकेट",
+          "price": 499,
+          "grams": 350,
+          "stock": 90
+        }
       ]
     },
     {
@@ -118,7 +187,15 @@
       "may_contain": ["milk", "wheat"],
       "dietary": ["vegetarian"],
       "spice": 2,
-      "variants": [{ "en": "90 g bag", "ne": "९० ग्राम", "price": 199, "grams": 90, "stock": 200 }]
+      "variants": [
+        {
+          "en": "90 g bag",
+          "ne": "९० ग्राम",
+          "price": 199,
+          "grams": 90,
+          "stock": 200
+        }
+      ]
     },
     {
       "slug": "ashan-kitchen-bhuja",
@@ -133,7 +210,26 @@
       "allergens": ["peanuts"],
       "dietary": ["vegetarian", "vegan"],
       "spice": 1,
-      "variants": [{ "en": "200 g", "ne": "२०० ग्राम", "price": 399, "grams": 200, "stock": 80 }]
+      "variants": [
+        {
+          "en": "200 g",
+          "ne": "२०० ग्राम",
+          "price": 399,
+          "grams": 200,
+          "stock": 80
+        }
+      ],
+      "image": {
+        "path": "/products/ashan-kitchen-bhuja.jpg",
+        "credit": {
+          "title": "Muri Bhujiya.jpg",
+          "author": "Gaurav Dhwaj Khadka",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source": "https://commons.wikimedia.org/wiki/File:Muri_Bhujiya.jpg",
+          "modified": "cropped and resized"
+        }
+      }
     },
     {
       "slug": "ashan-kitchen-dalmot",
@@ -151,9 +247,33 @@
       "spice": 2,
       "tags": ["dashain"],
       "variants": [
-        { "en": "400 g", "ne": "४०० ग्राम", "price": 599, "grams": 400, "stock": 70 },
-        { "en": "1 kg", "ne": "१ किलो", "price": 1299, "compare": 1499, "grams": 1000, "stock": 25 }
-      ]
+        {
+          "en": "400 g",
+          "ne": "४०० ग्राम",
+          "price": 599,
+          "grams": 400,
+          "stock": 70
+        },
+        {
+          "en": "1 kg",
+          "ne": "१ किलो",
+          "price": 1299,
+          "compare": 1499,
+          "grams": 1000,
+          "stock": 25
+        }
+      ],
+      "image": {
+        "path": "/products/ashan-kitchen-dalmot.jpg",
+        "credit": {
+          "title": "Dalmoth 1.jpg",
+          "author": "Gaurav Dhwaj Khadka",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source": "https://commons.wikimedia.org/wiki/File:Dalmoth_1.jpg",
+          "modified": "cropped and resized"
+        }
+      }
     },
     {
       "slug": "lays-india-magic-masala",
@@ -169,7 +289,15 @@
       "may_contain": ["milk"],
       "dietary": ["vegetarian"],
       "spice": 1,
-      "variants": [{ "en": "52 g bag", "ne": "५२ ग्राम", "price": 149, "grams": 52, "stock": 150 }]
+      "variants": [
+        {
+          "en": "52 g bag",
+          "ne": "५२ ग्राम",
+          "price": 149,
+          "grams": 52,
+          "stock": 150
+        }
+      ]
     },
     {
       "slug": "ashan-kitchen-mula-achar",
@@ -185,8 +313,25 @@
       "dietary": ["vegetarian", "vegan"],
       "spice": 2,
       "variants": [
-        { "en": "400 g jar", "ne": "४०० ग्राम बोतल", "price": 799, "grams": 400, "stock": 45 }
-      ]
+        {
+          "en": "400 g jar",
+          "ne": "४०० ग्राम बोतल",
+          "price": 799,
+          "grams": 400,
+          "stock": 45
+        }
+      ],
+      "image": {
+        "path": "/products/ashan-kitchen-mula-achar.jpg",
+        "credit": {
+          "title": "Mula Ko Achar.jpg",
+          "author": "Gaurav Dhwaj Khadka",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source": "https://commons.wikimedia.org/wiki/File:Mula_Ko_Achar.jpg",
+          "modified": "cropped and resized"
+        }
+      }
     },
     {
       "slug": "ashan-kitchen-lapsi-achar",
@@ -202,7 +347,13 @@
       "dietary": ["vegetarian", "vegan"],
       "spice": 1,
       "variants": [
-        { "en": "300 g jar", "ne": "३०० ग्राम बोतल", "price": 699, "grams": 300, "stock": 50 }
+        {
+          "en": "300 g jar",
+          "ne": "३०० ग्राम बोतल",
+          "price": 699,
+          "grams": 300,
+          "stock": 50
+        }
       ]
     },
     {
@@ -218,7 +369,15 @@
       "allergens": [],
       "dietary": ["vegetarian", "vegan"],
       "spice": 3,
-      "variants": [{ "en": "100 g", "ne": "१०० ग्राम", "price": 549, "grams": 100, "stock": 60 }]
+      "variants": [
+        {
+          "en": "100 g",
+          "ne": "१०० ग्राम",
+          "price": 549,
+          "grams": 100,
+          "stock": 60
+        }
+      ]
     },
     {
       "slug": "ashan-kitchen-gundruk",
@@ -233,7 +392,26 @@
       "allergens": [],
       "dietary": ["vegetarian", "vegan"],
       "spice": 0,
-      "variants": [{ "en": "200 g", "ne": "२०० ग्राम", "price": 899, "grams": 200, "stock": 35 }]
+      "variants": [
+        {
+          "en": "200 g",
+          "ne": "२०० ग्राम",
+          "price": 899,
+          "grams": 200,
+          "stock": 35
+        }
+      ],
+      "image": {
+        "path": "/products/ashan-kitchen-gundruk.jpg",
+        "credit": {
+          "title": "Gundruk NP.jpg",
+          "author": "Krish Dulal",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "source": "https://commons.wikimedia.org/wiki/File:Gundruk_NP.jpg",
+          "modified": "cropped and resized"
+        }
+      }
     },
     {
       "slug": "ashan-kitchen-timur-whole",
@@ -248,7 +426,15 @@
       "allergens": [],
       "dietary": ["vegetarian", "vegan"],
       "spice": 1,
-      "variants": [{ "en": "100 g", "ne": "१०० ग्राम", "price": 699, "grams": 100, "stock": 55 }]
+      "variants": [
+        {
+          "en": "100 g",
+          "ne": "१०० ग्राम",
+          "price": 699,
+          "grams": 100,
+          "stock": 55
+        }
+      ]
     },
     {
       "slug": "ashan-kitchen-jimbu",
@@ -263,7 +449,15 @@
       "allergens": [],
       "dietary": ["vegetarian", "vegan"],
       "spice": 0,
-      "variants": [{ "en": "25 g", "ne": "२५ ग्राम", "price": 599, "grams": 25, "stock": 40 }]
+      "variants": [
+        {
+          "en": "25 g",
+          "ne": "२५ ग्राम",
+          "price": 599,
+          "grams": 25,
+          "stock": 40
+        }
+      ]
     },
     {
       "slug": "everest-meat-masala",
@@ -280,7 +474,13 @@
       "dietary": ["vegetarian", "vegan"],
       "spice": 2,
       "variants": [
-        { "en": "100 g box", "ne": "१०० ग्राम", "price": 349, "grams": 100, "stock": 110 }
+        {
+          "en": "100 g box",
+          "ne": "१०० ग्राम",
+          "price": 349,
+          "grams": 100,
+          "stock": 110
+        }
       ]
     },
     {
@@ -296,7 +496,15 @@
       "allergens": ["tree nuts", "milk"],
       "dietary": ["vegetarian"],
       "spice": 0,
-      "variants": [{ "en": "400 g", "ne": "४०० ग्राम", "price": 1999, "grams": 400, "stock": 20 }]
+      "variants": [
+        {
+          "en": "400 g",
+          "ne": "४०० ग्राम",
+          "price": 1999,
+          "grams": 400,
+          "stock": 20
+        }
+      ]
     },
     {
       "slug": "ashan-kitchen-chiura-thick",
@@ -313,9 +521,32 @@
       "spice": 0,
       "tags": ["dashain"],
       "variants": [
-        { "en": "1 kg", "ne": "१ किलो", "price": 499, "grams": 1000, "stock": 90 },
-        { "en": "2 kg", "ne": "२ किलो", "price": 899, "grams": 2000, "stock": 40 }
-      ]
+        {
+          "en": "1 kg",
+          "ne": "१ किलो",
+          "price": 499,
+          "grams": 1000,
+          "stock": 90
+        },
+        {
+          "en": "2 kg",
+          "ne": "२ किलो",
+          "price": 899,
+          "grams": 2000,
+          "stock": 40
+        }
+      ],
+      "image": {
+        "path": "/products/ashan-kitchen-chiura-thick.jpg",
+        "credit": {
+          "title": "Flattened Rice (Poha) (49684434042).jpg",
+          "author": "Ajay Suresh from New York, NY, USA",
+          "license": "CC BY 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+          "source": "https://commons.wikimedia.org/wiki/File:Flattened_Rice_(Poha)_(49684434042).jpg",
+          "modified": "cropped and resized"
+        }
+      }
     },
     {
       "slug": "ashan-kitchen-jeera-masino-rice",
@@ -331,7 +562,13 @@
       "dietary": ["vegetarian", "vegan", "gluten-free"],
       "spice": 0,
       "variants": [
-        { "en": "10 lb bag", "ne": "१० पाउन्ड", "price": 1899, "grams": 4536, "stock": 30 },
+        {
+          "en": "10 lb bag",
+          "ne": "१० पाउन्ड",
+          "price": 1899,
+          "grams": 4536,
+          "stock": 30
+        },
         {
           "en": "20 lb bag",
           "ne": "२० पाउन्ड",
@@ -340,7 +577,18 @@
           "grams": 9072,
           "stock": 15
         }
-      ]
+      ],
+      "image": {
+        "path": "/products/ashan-kitchen-jeera-masino-rice.jpg",
+        "credit": {
+          "title": "Mushqbudji rice grains close-up.jpg",
+          "author": "Zahoor Ahmad Reshi",
+          "license": "CC0",
+          "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+          "source": "https://commons.wikimedia.org/wiki/File:Mushqbudji_rice_grains_close-up.jpg",
+          "modified": "cropped and resized"
+        }
+      }
     },
     {
       "slug": "ashan-kitchen-masoor-daal",
@@ -355,7 +603,26 @@
       "allergens": [],
       "dietary": ["vegetarian", "vegan", "gluten-free"],
       "spice": 0,
-      "variants": [{ "en": "2 lb", "ne": "२ पाउन्ड", "price": 549, "grams": 907, "stock": 75 }]
+      "variants": [
+        {
+          "en": "2 lb",
+          "ne": "२ पाउन्ड",
+          "price": 549,
+          "grams": 907,
+          "stock": 75
+        }
+      ],
+      "image": {
+        "path": "/products/ashan-kitchen-masoor-daal.jpg",
+        "credit": {
+          "title": "Split Red Lentil.jpg",
+          "author": "Sanjay Acharya",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source": "https://commons.wikimedia.org/wiki/File:Split_Red_Lentil.jpg",
+          "modified": "cropped and resized"
+        }
+      }
     },
     {
       "slug": "ashan-select-ilam-orthodox-tea",
@@ -371,7 +638,13 @@
       "dietary": ["vegetarian", "vegan", "gluten-free"],
       "spice": 0,
       "variants": [
-        { "en": "100 g tin", "ne": "१०० ग्राम", "price": 1299, "grams": 100, "stock": 40 }
+        {
+          "en": "100 g tin",
+          "ne": "१०० ग्राम",
+          "price": 1299,
+          "grams": 100,
+          "stock": 40
+        }
       ]
     },
     {
@@ -388,7 +661,15 @@
       "dietary": ["vegetarian", "vegan", "gluten-free"],
       "spice": 0,
       "tags": ["bestseller"],
-      "variants": [{ "en": "500 g", "ne": "५०० ग्राम", "price": 899, "grams": 500, "stock": 85 }]
+      "variants": [
+        {
+          "en": "500 g",
+          "ne": "५०० ग्राम",
+          "price": 899,
+          "grams": 500,
+          "stock": 85
+        }
+      ]
     },
     {
       "slug": "ashan-kitchen-lapsi-titaura",
@@ -404,7 +685,15 @@
       "dietary": ["vegetarian", "vegan"],
       "spice": 1,
       "tags": ["bestseller", "tihar"],
-      "variants": [{ "en": "200 g", "ne": "२०० ग्राम", "price": 499, "grams": 200, "stock": 100 }]
+      "variants": [
+        {
+          "en": "200 g",
+          "ne": "२०० ग्राम",
+          "price": 499,
+          "grams": 200,
+          "stock": 100
+        }
+      ]
     },
     {
       "slug": "haldirams-rasgulla",
@@ -421,7 +710,13 @@
       "spice": 0,
       "tags": ["tihar"],
       "variants": [
-        { "en": "1 kg tin", "ne": "१ किलो टिन", "price": 699, "grams": 1000, "stock": 60 }
+        {
+          "en": "1 kg tin",
+          "ne": "१ किलो टिन",
+          "price": 699,
+          "grams": 1000,
+          "stock": 60
+        }
       ]
     },
     {
@@ -456,7 +751,18 @@
           "stock": 20,
           "shipping": "frozen"
         }
-      ]
+      ],
+      "image": {
+        "path": "/products/ashan-kitchen-chicken-momo.jpg",
+        "credit": {
+          "title": "Steamed Momos - KOLKATA.jpg",
+          "author": "TAPAS KUMAR HALDER",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source": "https://commons.wikimedia.org/wiki/File:Steamed_Momos_-_KOLKATA.jpg",
+          "modified": "cropped and resized"
+        }
+      }
     },
     {
       "slug": "ashan-select-nepali-dhoop",
@@ -472,8 +778,15 @@
       "spice": null,
       "tags": ["tihar"],
       "variants": [
-        { "en": "Pack of 30 sticks", "ne": "३० वटा", "price": 599, "grams": 120, "stock": 80 }
+        {
+          "en": "Pack of 30 sticks",
+          "ne": "३० वटा",
+          "price": 599,
+          "grams": 120,
+          "stock": 80
+        }
       ]
     }
-  ]
+  ],
+  "_images": "Product photos in apps/web/public/products are openly licensed from Wikimedia Commons; each product's image.credit must stay with it (shown on the product page and /credits)."
 }

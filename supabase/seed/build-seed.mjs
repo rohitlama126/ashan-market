@@ -44,6 +44,13 @@ insert into public.product_compliance (product_id, country_of_origin, ingredient
 select id, ${q(p.origin)}, ${q(p.ingredients)}, ${arr(p.allergens)}, ${arr(p.may_contain)}, ${q(p.brand)}, false
 from public.products where slug = ${q(p.slug)};
 `);
+  if (p.image) {
+    const c = p.image.credit ?? {};
+    out.push(`insert into public.product_images (product_id, path, alt_en, alt_ne, credit_author, credit_license, credit_license_url, credit_source_url, credit_note)
+select id, ${q(p.image.path)}, ${q(p.en)}, ${q(p.ne)}, ${q(c.author)}, ${q(c.license)}, ${q(c.licenseUrl)}, ${q(c.source)}, ${q(c.modified)}
+from public.products where slug = ${q(p.slug)};
+`);
+  }
   p.variants.forEach((v, j) => {
     const sku = `AM-${String(i + 1).padStart(3, '0')}-${j + 1}`;
     out.push(`insert into public.variants (product_id, sku, title_en, title_ne, price_cents, compare_at_cents, net_weight_g, shipping_class, sort)
